@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+//TODO
+option go_package = "keshuigu/mygrpc/examples/helloworld/helloworld";
+
+package helloworld;
+
+// 定义rpc服务
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
