@@ -5,3 +5,5 @@
     rpc Search(SearchRequest) returns (SearchResponse);
    }
    ```
+3. flag包用于解析命令行参数
+4. var 在函数外声明全局变量

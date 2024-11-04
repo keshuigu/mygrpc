@@ -1,14 +1,23 @@
 # gRPC Hello World
 
-1. 启动服务器
+1. 生成*pb.go文件 安装protobuf-compiler
 
   ```console
-  $ $(go env GOPATH)/bin/greeter_server &
+  $ protoc --go_out=. --go_opt=paths=source_relative \
+    --go-grpc_out=. --go-grpc_opt=paths=source_relative \
+    helloworld/helloworld.proto
   ```
-2. 启动客户端
+
+2. 启动服务器
 
   ```console
-  $ $(go env GOPATH)/bin/greeter_client
+  $ go run greeter_server/main.go &
+  ```
+
+3. 启动客户端
+
+  ```console
+  $ go run greeter_client/main.go
   Greeting: Hello world
   ```
 
