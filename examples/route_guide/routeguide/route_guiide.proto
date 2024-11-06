@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+option go_package = "keshuigu/mygrpc/examples/route_guide/routeguide";
+
+package routeguide;
+
+service RouteGuide {
+  // 一个简单的 RPC。
+  //
+  // 获取给定位置的特征。
+  //
+  // 如果给定位置没有特征，则返回一个名称为空的特征。
+  rpc GetFeature (Point) returns (Feature) {}
+
+  // 服务器到客户端的流式 RPC。
+  //
+  // 获取给定矩形内的可用特征。结果是流式传输的，而不是一次性返回
+  // （例如，在带有重复字段的响应消息中），因为矩形可能覆盖很大的区域并包含大量特征。
+  rpc ListFeatures (Rectangle) returns (stream Feature) {}
+
+  // 客户端到服务器的流式 RPC。
+  //
+  // 接受在遍历路线时的一系列点，并在遍历完成时返回 RouteSummary。
+  rpc RecordRoute (stream Point) returns (RouteSummary);
+
+  // 双向流式 RPC。
+  //
+  // 接受在遍历路线时发送的一系列 RouteNotes，同时接收其他 RouteNotes（例如来自其他用户）。
+  rpc RouteChat (stream RouteNote) returns (stream RouteNote);
+}
+
+// 点表示为 E7 表示法中的纬度-经度对（度数乘以 10**7 并四舍五入到最接近的整数）。
+// 纬度应在 +/- 90 度范围内， 经度应在 +/- 180 度范围内（包括端点）。
+message Point {
+  int32 latitude = 1;
+  int32 longtitude = 2;
+}
+
+// 一个纬度-经度矩形，表示为两个对角相对的点 "lo" 和 "hi"。
+message Rectangle {
+  Point lo = 1;
+  Point hi = 2;
+}
+
+// 在给定点命名某物的特征。
+//
+// 如果无法命名特征，则名称为空。
+message Feature{
+  string name = 1;
+  Point location = 2;
+}
+
+// RouteNote 是在给定点发送的消息。
+message RouteNote {
+  Point location = 1;
+  string message = 2;
+}
+
+// RouteSummary 是在响应 RecordRoute rpc 时接收的。
+//
+// 它包含接收到的单个点的数量、检测到的特征数量以及
+// 作为每个点之间距离的累积和所覆盖的总距离。
+message RouteSummary{
+  // 接收到的点的数量。
+  int32 point_count = 1;
+  // 在遍历路线时经过的已知特征的数量。
+  int32 feature_count = 2;
+  // 覆盖的距离（以米为单位）。
+  int32 distance = 3;
+  // 遍历的持续时间（以秒为单位）。
+  int32 elapsed_time = 4;
+}
