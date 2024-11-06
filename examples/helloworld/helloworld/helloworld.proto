@@ -4,10 +4,12 @@ syntax = "proto3";
 option go_package = "keshuigu/mygrpc/examples/helloworld/helloworld";
 
 package helloworld;
-
+// protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative helloworld/helloworld.proto
 // 定义rpc服务
 service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+
+  rpc SayHelloAgain (HelloRequest) returns (HelloReply){}
 }
 
 message HelloRequest {
