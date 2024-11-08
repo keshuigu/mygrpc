@@ -7,3 +7,8 @@
    ```
 3. flag包用于解析命令行参数
 4. var 在函数外声明全局变量
+5. if语句中声明的变量，作用范围只在if块中,包括elseif和else分支
+6. map需要用make初始化`routeNotes := make(map[string][]*pb.RouteNote)`
+7. make 初始化切片，映射，通道
+8.	`grpcServer := grpc.NewServer(opts...)`，其中`...`将切片解包为可变参数列表，传递给函数。
+9.	`ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)`10s超时上下文，10s后发送ctx.Done()到chan

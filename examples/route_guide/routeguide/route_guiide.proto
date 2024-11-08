@@ -33,7 +33,7 @@ service RouteGuide {
 // 纬度应在 +/- 90 度范围内， 经度应在 +/- 180 度范围内（包括端点）。
 message Point {
   int32 latitude = 1;
-  int32 longtitude = 2;
+  int32 Longitude = 2;
 }
 
 // 一个纬度-经度矩形，表示为两个对角相对的点 "lo" 和 "hi"。
