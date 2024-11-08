@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "keshuigu/mygrpc/examples/features/proto/echo";
+
+package proto.echo; // go中忽略
+
+message EchoRequest {
+  string message = 1;
+}
+
+message EchoResponse {
+  string message = 1;
+}
+
+service Echo {
+  // unary 一元
+  rpc UnaryEcho (EchoRequest) returns (EchoResponse);
+  rpc ServerStreamingEcho (EchoRequest) returns (stream EchoResponse);
+  rpc ClientStreamingEcho (stream EchoRequest) returns (EchoResponse);
+  rpc BidirectionalStreamingEcho (stream EchoRequest) returns (stream EchoResponse);
+
+}
