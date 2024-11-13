@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Echo_UnaryEcho_FullMethodName                  = "/mygrpc.examples.echo.Echo/UnaryEcho"
-	Echo_ServerStreamingEcho_FullMethodName        = "/mygrpc.examples.echo.Echo/ServerStreamingEcho"
-	Echo_ClientStreamingEcho_FullMethodName        = "/mygrpc.examples.echo.Echo/ClientStreamingEcho"
-	Echo_BidirectionalStreamingEcho_FullMethodName = "/mygrpc.examples.echo.Echo/BidirectionalStreamingEcho"
+	Echo_UnaryEcho_FullMethodName                  = "/proto.echo.Echo/UnaryEcho"
+	Echo_ServerStreamingEcho_FullMethodName        = "/proto.echo.Echo/ServerStreamingEcho"
+	Echo_ClientStreamingEcho_FullMethodName        = "/proto.echo.Echo/ClientStreamingEcho"
+	Echo_BidirectionalStreamingEcho_FullMethodName = "/proto.echo.Echo/BidirectionalStreamingEcho"
 )
 
 // EchoClient is the client API for Echo service.
@@ -198,7 +198,7 @@ type Echo_BidirectionalStreamingEchoServer = grpc.BidiStreamingServer[EchoReques
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Echo_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "mygrpc.examples.echo.Echo",
+	ServiceName: "proto.echo.Echo",
 	HandlerType: (*EchoServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "keshuigu/mygrpc/examples/features/proto/echo";
 
-package proto.echo; // go中忽略
+package proto.echo; // go中忽略，反射时仍会体现出来
 
 message EchoRequest {
   string message = 1;
