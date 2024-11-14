@@ -27,3 +27,5 @@
 12. 基础是http2协议，需要学习
 13. keepalive中的 stream是 proto的,指的是没有活动的RPC流也发送ping
 14. go中反引号代表原始字符串，即不需要转义
+15. metadata client发送metadata，而server区分头部和尾部
+16. 一元rpc可以用calloption的方法注册接受header和trailer的metadata，流式的不可以，需要用stream.Header()接受
