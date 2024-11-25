@@ -4,7 +4,7 @@ import (
 	"context"
 	"flag"
 	"io"
-	pb "keshuigu/mygrpc/exapmles/route_guide/routeguide"
+	pb "keshuigu/mygrpc/examples/route_guide/routeguide"
 	"log"
 	rand "math/rand/v2"
 	"time"

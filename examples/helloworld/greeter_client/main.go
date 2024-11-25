@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	pb "keshuigu/mygrpc/exapmles/helloworld/helloworld"
+	pb "keshuigu/mygrpc/examples/helloworld/helloworld"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

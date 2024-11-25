@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	pb "keshuigu/mygrpc/exapmles/route_guide/routeguide"
+	pb "keshuigu/mygrpc/examples/route_guide/routeguide"
 
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/proto"

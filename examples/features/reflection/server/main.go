@@ -7,8 +7,8 @@ import (
 	"log"
 	"net"
 
-	ecpb "keshuigu/mygrpc/exapmles/features/proto/echo"
-	hwpb "keshuigu/mygrpc/exapmles/helloworld/helloworld"
+	ecpb "keshuigu/mygrpc/examples/features/proto/echo"
+	hwpb "keshuigu/mygrpc/examples/helloworld/helloworld"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

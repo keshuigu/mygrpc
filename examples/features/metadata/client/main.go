@@ -4,7 +4,7 @@ import (
 	"context"
 	"flag"
 	"io"
-	pb "keshuigu/mygrpc/exapmles/features/proto/echo"
+	pb "keshuigu/mygrpc/examples/features/proto/echo"
 	"log"
 	"time"
 

@@ -9,7 +9,7 @@ import (
 
 	epb "google.golang.org/genproto/googleapis/rpc/errdetails"
 
-	pb "keshuigu/mygrpc/exapmles/helloworld/helloworld"
+	pb "keshuigu/mygrpc/examples/helloworld/helloworld"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

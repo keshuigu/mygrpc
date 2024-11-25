@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	pb "keshuigu/mygrpc/exapmles/helloworld/helloworld"
+	pb "keshuigu/mygrpc/examples/helloworld/helloworld"
 	"log"
 	"math/rand/v2"
 	"net"

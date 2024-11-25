@@ -4,7 +4,7 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	pb "keshuigu/mygrpc/exapmles/helloworld/helloworld"
+	pb "keshuigu/mygrpc/examples/helloworld/helloworld"
 	"log"
 	"net"
 
