@@ -32,3 +32,16 @@
 17. make(chan struct{}) 是 Go 语言中的一种语法，用于创建一个空的（零大小）通道。这个通道的元素类型是 `struct{}`，表示一个空的结构体。使用 `struct{}` 作为通道的元素类型有几个优点：**节省内存**：`struct{}` 是一个零大小的类型，因此使用它作为通道的元素类型不会占用额外的内存。**表示信号**：使用 `struct{}` 通道通常用于信号传递，而不是传递实际的数据。它可以用来表示事件的发生或完成。
 18. TIME_WAIT TCP中接收到FIN发送ACK后等待关闭，防止对方未接收到ACK而需要重传FIN
 19. defer后进先出
+20. ```go
+    func main() {
+        var i interface{} = "hello"
+        var s interface{}
+        // var ok bool
+        if s, ok := i.(string); ok {
+            println(s)
+        } else {
+            println("no")
+        }
+        println(s) // 不受if的赋值影响
+    }
+    ```
